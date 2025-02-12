@@ -2,7 +2,9 @@
 import { useState } from "react";
 
 function App() {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState([
+    { text: "Exempeluppgift", completed: false },
+  ]);
   const [inputValue, setInputValue] = useState("");
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
@@ -10,8 +12,15 @@ function App() {
 
   const addTodo = () => {
     if (inputValue.trim() === "") return;
-    setTodos([...todos, inputValue]);
+    setTodos([...todos, { text: inputValue, completed: false }]);
     setInputValue("");
+  };
+
+  const toggleTodo = (index) => {
+    const updatedTodos = todos.map((todo, i) =>
+      i === index ? { ...todo, completed: !todo.completed } : todo
+  );
+    setTodos(updatedTodos);
   };
 
   return (
@@ -30,7 +39,13 @@ function App() {
         {/* Lista med uppgifter */}
         <ul>
           {todos.map((todo, index) => (
-            <li key={index}>{todo}</li>
+            <li
+            key={index}
+            onClick={() => toggleTodo(index)}
+            style={{ textDecoration: todo.completed ? "Line-through" : "none" }} 
+            >
+              {todo.text}
+              </li>
           ))}
         </ul>
       </div>
