@@ -1,5 +1,6 @@
 
 import { useState } from "react";
+import styles from "./Todo.module.css";
 
 function App() {
   const [todos, setTodos] = useState([
@@ -35,7 +36,7 @@ function App() {
   };
 
   return (
-    <div>
+    <div className={styles.container}>
       <h1>React Todo-App</h1>
       {/* Inputfält och knapp */}
       <input
@@ -54,7 +55,7 @@ function App() {
             <li
             key={index}
             onClick={() => toggleTodo(index)}
-            style={{ textDecoration: todo.completed ? "Line-through" : "none" }} 
+            className={`${styles.todoItem} ${todo.completed ? styles.completed : ""}`}
             >
               {todo.text}
               <button onClick={(e) => {
