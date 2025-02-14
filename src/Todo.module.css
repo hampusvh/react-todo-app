@@ -18,8 +18,42 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 2px solid black;
+    border: 1px solid black;
 }
+
+.inputField {
+    width: 90%;
+    max-width: 350px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #1d7e71;
+    border-radius: 5px;
+    outline: none;
+    transition: border 0.3s ease-in-out;
+}
+
+.inputField:focus {
+    border: 1px solid #000000;
+    box-shadow: 1 1 5px rgba(135, 123, 147, 0.5);
+  }
+
+  .addButton {
+    margin-top: 15px;
+    width: 200px;
+    background: #1c1d1d;
+    color: rgb(147, 158, 151);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .addButton:hover {
+    background: #202122;
+
+  }
 
 todoItem {
     display: flex;

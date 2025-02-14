@@ -36,19 +36,23 @@ function App() {
   };
 
   return (
+
+<>
+<h1>React : to-do app</h1>
     <div className={styles.container}>
-      <h1>React Todo-App</h1>
+
       {/* Inputfält och knapp */}
       <input
         type="text"
         value={inputValue}
         onChange={handleInputChange}
         onKeyDown={handleKeyDown}
-        placeholder="..add something to do.."
+        placeholder="... add something to do ..."
+        className={styles.inputField}
         />
-        <button onClick={addTodo}>Lägg till
+        <button onClick={addTodo} className={styles.addButton}>Add
         </button>
-
+      </div>
         {/* Lista med uppgifter */}
         <ul>
           {todos.map((todo, index) => (
@@ -67,7 +71,8 @@ function App() {
               </li>
           ))}
         </ul>
-      </div>
+  
+      </>
   );     
 }
 
