@@ -39,7 +39,7 @@ function App() {
 
 <>
 <h1>React : to-do app</h1>
-    <div className={styles.container}>
+    <div className={styles.listContainer}>
 
       {/* Inputfält och knapp */}
       <input
@@ -54,6 +54,7 @@ function App() {
         </button>
       </div>
         {/* Lista med uppgifter */}
+        <div className={styles.listContainer}>
         <ul>
           {todos.map((todo, index) => (
             <li
@@ -71,7 +72,7 @@ function App() {
               </li>
           ))}
         </ul>
-  
+  </div>
       </>
   );     
 }
