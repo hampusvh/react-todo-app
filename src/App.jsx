@@ -44,7 +44,7 @@ function App() {
         value={inputValue}
         onChange={handleInputChange}
         onKeyDown={handleKeyDown}
-        placeholder="Lägg till en uppgift..."
+        placeholder="..add something to do.."
         />
         <button onClick={addTodo}>Lägg till
         </button>
